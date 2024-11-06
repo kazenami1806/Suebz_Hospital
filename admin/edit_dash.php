@@ -1,0 +1,158 @@
+<?php
+include("../config/koneksi.php");
+
+$id_admin = $_GET["id"];
+$query = "SELECT * FROM admin WHERE id = '$id_admin'";
+$result = $conn->query($query);
+
+if ($result->num_rows == 1) {
+    $id = $result->fetch_assoc();
+}
+
+$conn->close();
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Edit - Profil</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css" />
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="dashboard.php">Sueb Hospital Admin</a>
+        <!-- Navbar-->
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link" href="dashboard.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Media
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="media/gambar.php">Gambar</a>
+                                <a class="nav-link" href="media/video.php">Video</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="ulasan.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Ulasan
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    ADMIN
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Edit Profil</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Edit Profil</li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <form method="POST" action="m_edit_dash.php?id=<?php echo $id_admin; ?>" enctype="multipart/form-data">
+                                <div class="mb-2">
+                                    <label for="nama" class="form-label">Nama :</label>
+                                    <input type="text" class="form-control" id="nama" name="nama" value="<?php echo isset($id['nama']) ? $id['nama'] : ''; ?>" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="form-label">Password :</label>
+                                    <input type="text" class="form-control" id="password" name="password" value="<?php echo isset($id['password']) ? $id['password'] : ''; ?>" required>
+                                </div>
+                                <div class="mb-1">
+                                    <label for="img" class="form-label">Foto Ptofil :</label>
+                                    <br><img src="../img/<?php echo isset($id['foto_profil']) ? $id['foto_profil'] : ''; ?>" width=30% style="margin-bottom: 10px;">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="foto_profil" class="form-label">Ganti Foto : </label>
+                                    <input class="form-control" type="file" id="foto_profil" name="foto_profil">
+                                </div>
+
+                                <button type="button" class="btn btn-danger" onclick="window.location.href = 'dashboard.php'">Close</button>
+                                <button type="submit" class="btn btn-success">Edit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; SUEB Hospital 2023</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+            // Function to show session expired alert
+            function showSessionExpiredAlert() {
+                alert("Sesi admin telah habis. Anda akan diarahkan ke halaman login.");
+            }
+
+            // Function to reset session timer when user interacts with the page
+            function resetSessionTimer() {
+                clearTimeout(sessionTimeout);
+                sessionTimeout = setTimeout(function() {
+                    showSessionExpiredAlert();
+                    redirectToLogin();
+                }, 3600000); // 3600000 ms = 1 hour
+            }
+
+            // Function to redirect to login page
+            function redirectToLogin() {
+                window.location.href = "./index.php";
+            }
+
+            // Set session timer when the page loads
+            var sessionTimeout = setTimeout(function() {
+                showSessionExpiredAlert();
+                redirectToLogin();
+            }, 3600000); // 3600000 ms = 1 hour
+
+            // Add event listeners to reset session timer when user interacts with the page
+            window.addEventListener("click", resetSessionTimer);
+            window.addEventListener("mousemove", resetSessionTimer);
+            window.addEventListener("keypress", resetSessionTimer);
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</body>
+
+</html>

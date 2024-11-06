@@ -1,0 +1,634 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+  font-family: "Montserrat";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.wp {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  /* max-width: 1430px; */
+  height: fit-content;
+  /* margin: 0 auto; */
+  /* padding: 0 15px; */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.nav-content {
+  display: flex;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img_logo {
+  float: left;
+  padding: 5px 20px;
+  color: #fff;
+  height: 70px;
+}
+
+nav.sticky {
+  padding: 5px 20px;
+  background: #fff;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+nav.sticky .nav-content ul li a {
+  color: #000;
+}
+
+.nav-content ul {
+  display: flex;
+  align-items: center;
+}
+
+.nav-content a {
+  color: inherit;
+}
+
+.nav-content ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.nav-content ul li a {
+  flex-wrap: wrap;
+  font-size: 18px;
+  font-weight: 550;
+  color: #fff;
+  padding: 10px 4px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.nav-content ul:hover a {
+  color: rgb(207, 207, 207);
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.nav-content ul:hover a:hover {
+  color: lightseagreen;
+  box-shadow: 0 2px 0 0 currentColor;
+  border-bottom: 1px solid #5cdb95;
+}
+
+nav.sticky .nav-content ul:hover a {
+  color: rgb(224, 224, 224);
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+nav.sticky .nav-content ul li a:hover {
+  color: lightseagreen;
+}
+
+.slider img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/*------------------------------------about section start-------------------------------------------*/
+.about {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 450px;
+}
+
+.box-about-1 {
+  height: fit-content;
+  width: 60%;
+  /* background-color: red; */
+  padding: 10px;
+  padding-left: 20px;
+  align-self: center;
+  margin-left: -80px;
+}
+
+.box-about-1 h3 {
+  color: rgb(0, 0, 0);
+  font-size: 36px;
+  /* line-height: 0px; */
+}
+
+.box-about-1 h2 {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  line-height: 0px;
+}
+.box-about-1 p {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  text-align: justify;
+}
+
+.box-about-2 {
+  height: 300px;
+  width: 30%;
+  /* background-color: rgb(247, 0, 0); */
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-right: -80px;
+}
+
+.img_logos {
+  height: 300px;
+  align-self: center;
+}
+/*------------------------------------about section end-------------------------------------------*/
+
+/*------------------------------------layanan section start-------------------------------------------*/
+.container2 {
+  justify-content: center;
+  display: flex;
+  height: fit-content;
+  align-items: center;
+}
+
+.katalog-card {
+  height: 450px;
+  border-radius: 10px;
+  margin: 0 20px 20px;
+  box-shadow: 0px 0px 10px rgba(57, 49, 49, 0.2);
+}
+
+.row {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  padding: 50px;
+  margin: 0 -20px;
+}
+
+.katalog-card-img {
+  height: 320px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.katalog-card {
+  transition: transform 0.2s ease-out;
+}
+
+.katalog-card:hover {
+  transform: scale(1.1);
+}
+
+.judul h2 {
+  margin: 10px 0px;
+  font-size: 36px;
+  text-align: center;
+  line-height: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.judul h2 span {
+  color: #81cef5;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.katalog-card h3 {
+  text-align: center;
+}
+/*------------------------------------layanan section end-------------------------------------------*/
+
+.video-gallery {
+  display: flex;
+  justify-content: center;
+}
+
+.container3 {
+  margin: 2rem 5rem;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.video-container .video {
+  height: 15rem;
+  width: 25rem;
+  margin: 2rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.video-container .video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.video-container .video video:hover {
+  transition: .2s linear;
+  transform: scale(1.3);
+}
+
+.video-container .video .active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 80%;
+  box-shadow: 0 0 0 100vh rgba(0, 0, 0, .7);
+  z-index: 2;
+}
+
+.video-container .video .active:hover {
+  transition: none;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/*------------------------------------layanan page 2 start-------------------------------------------*/
+.katalog-card1 {
+  height: 550px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0 20px 40px;
+  box-shadow: 0px 0px 10px rgba(57, 49, 49, 0.2);
+  transition: transform 0.2s ease-out;
+  background-color: #fff;
+}
+
+.katalog-card1:hover {
+  transform: scale(1.1);
+}
+
+.katalog-card1 p {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 350px;
+}
+/*------------------------------------layanan page 2 end-------------------------------------------*/
+
+/*------------------------------------BMI page start-------------------------------------------*/
+.bmi_card {
+  height: 450px;
+  border-radius: 10px;
+  margin: 0 20px 20px;
+  box-shadow: 0px 0px 10px rgba(57, 49, 49, 0.2);
+}
+
+.bmi-card h1 {
+  text-align: center;
+}
+.judul-bmi h2 {
+  font-size: 36px;
+  text-align: center;
+  line-height: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.bmi-card form {
+  text-align: center;
+}
+
+.bmi-card label {
+  display: block;
+  margin-top: 10px;
+}
+
+.bmi-card input[type="number"] {
+  padding: 5px;
+}
+
+.bmi-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#result {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+table {
+  border-collapse:collapse;
+  width: 500px;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+/*------------------------------------BMI page end-------------------------------------------*/
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  z-index: 99;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  background-color: #292727;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+.contact-form {
+  background-color: #292727;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact-form form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #c5c5c5;
+}
+
+.contact-form form input[type="text"],
+.contact-form form input[type="email"],
+.contact-form form textarea {
+  width: 100%;
+  /* padding: 5px; */
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #292727;
+  color: #666;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+}
+
+.contact-form form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contact-form form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+}
+
+.contact-form form input[type="submit"]:hover {
+  background-color: #4c4343;
+}
+
+/* footer */
+.footer {
+  background: #666;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+.footer-left {
+  width: 40%;
+}
+
+/* The company logo */
+.footer-left h3 {
+  color: #ffffff;
+  font: normal 36px "Open Sans", cursive;
+  margin: 0;
+}
+
+.footer-left h3 span {
+  color: lightseagreen;
+  margin-left: 5px;
+}
+
+.footer-company-name {
+  color: lightseagreen;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+.footer-center {
+  width: 35%;
+}
+
+.footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.footer-center p a {
+  color: lightseagreen;
+  text-decoration: none;
+}
+
+.footer-about {
+  font-weight: 300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  padding-right: 100px;
+  text-align: justify;
+}
+
+.footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+.footer-right {
+  width: 20%;
+}
+
+.footer-icons {
+  margin-top: 25px;
+}
+
+.footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+.footer-right button {
+  position: relative;
+  background-color: #292727;
+  border-radius: 5px;
+  box-shadow: #494545 0px 4px 0px 0px;
+  padding: 15px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: fit-content;
+  height: 49px;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.footer-right button::before {
+  content: "";
+  background-color: #49454591;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 700ms ease-in-out;
+  display: inline-block;
+}
+
+.footer-right button:hover::before {
+  width: 100%;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+@media (max-width: 880px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
+
+/* Style for the pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 520px;
+  background: #292727;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.x-icon{
+    color:white;
+}
